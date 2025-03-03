@@ -21,6 +21,17 @@
             from { opacity: 1; }
             to { opacity: 0.7; }
         }
+        .nav {
+            background: #0f0;
+            padding: 10px;
+            text-align: center;
+        }
+        .nav a {
+            color: #111;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+        }
         .container {
             max-width: 800px;
             margin: 50px auto;
@@ -28,6 +39,41 @@
             background: rgba(0, 0, 0, 0.8);
             border: 2px solid #0f0;
             border-radius: 10px;
+        }
+        .retro-pc {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            height: 250px;
+            background: #222;
+            border: 5px solid #0f0;
+            border-radius: 10px;
+            position: relative;
+            margin: 20px auto;
+            box-shadow: 0 0 15px #0f0;
+        }
+        .retro-screen {
+            width: 90%;
+            height: 60%;
+            background: black;
+            color: #0f0;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Courier New", monospace;
+            border: 3px solid #0f0;
+            margin-top: 10px;
+        }
+        .retro-keyboard {
+            width: 100%;
+            height: 30px;
+            background: #0f0;
+            position: absolute;
+            bottom: -15px;
+            border-radius: 5px;
         }
         .post {
             background: #222;
@@ -43,31 +89,75 @@
         .post p {
             color: #ddd;
         }
+        .search-box {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .search-box input {
+            padding: 10px;
+            width: 70%;
+            font-size: 1rem;
+            border: 2px solid #0f0;
+            background: #222;
+            color: #0f0;
+        }
+        .search-box button {
+            padding: 10px;
+            background: #0f0;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
         footer {
             margin-top: 20px;
             font-size: 0.8rem;
             color: #888;
         }
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body>
-    <h1>lolbins.lol</h1>
+    <div class="nav">
+        <a href="#">Home</a>
+        <a href="#">Blog</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+    <h1 class="fade-in">lolbins.lol</h1>
+    
+    <div class="retro-pc">
+        <div class="retro-screen">Welcome, hacker!</div>
+        <div class="retro-keyboard"></div>
+    </div>
+    
     <div class="container">
-        <p>Welcome to <strong>lolbins.lol</strong> – the only blog that makes cyber exploits funny! We take the sneaky tricks of threat actors and break them down with humor and a bit of mischief.</p>
+        <p class="fade-in">Welcome to <strong>lolbins.lol</strong> – the only blog that makes cyber exploits funny! We take the sneaky tricks of threat actors and break them down with humor and a bit of mischief.</p>
         
-        <div class="post">
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search for a LOLBin...">
+            <button onclick="searchPosts()">Search</button>
+        </div>
+        
+        <div class="post fade-in">
             <h2>certutil.exe – The Sneaky Downloader</h2>
             <p>Imagine a boring Windows utility that just wanted to check certificates, but hackers said, "Nah, you're downloading my malware now." Poor certutil.exe.</p>
         </div>
 
-        <div class="post">
+        <div class="post fade-in">
             <h2>rundll32.exe – The Butler Who Does Crime</h2>
             <p>Designed to run legitimate DLLs, but now forced into running malicious payloads. What a life.</p>
         </div>
     </div>
     
     <footer>
-        🄯 2025 lolbins.lol - The best worst cybersecurity blog ever.
+        &copy; 2025 lolbins.lol - The best worst cybersecurity blog ever.
     </footer>
 </body>
 </html>
